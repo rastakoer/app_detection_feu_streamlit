@@ -16,22 +16,22 @@
 ---
 # Transfert learning:
 ## Pour entrainer YoloV5 à reconnaitre du feu et/ou de la fumée nous avons labélisé des images grâce makesens.ai nous avons ensuite stocké ces images dans un dossier Donnees comme ci-dessous
-YOLO_FEU
-│       
-├───Donnees
-│   ├───test
-│   ├───train
-│   │   ├───images
-│   │   └───labels
-│   └───valid
-│       ├───images
-│       └───labels
+YOLO_FEU  
+│  
+├───Donnees  
+│   ├───test  
+│   ├───train  
+│   │   ├───images  
+│   │   └───labels  
+│   └───valid  
+│       ├───images  
+│       └───labels  
 └───yolov5
 
 ## Nous avons ensuite crée un fichier feu.yaml pour que yolo ait le chemin vers nos images et nos labels dans yoloV5>data
 
 ## Nous avons ensuite utilisé google colab pour entrainer notre modèle avec les commandes suivantes:
-'''!python yolov5/train.py --data yolov5/data/feu.yaml --epochs 15 --batch-size 16'''
+```!python yolov5/train.py --data yolov5/data/feu.yaml --epochs 15 --batch-size 16```
 ## Et enfin nous avons réalisé un test en ajoutant des images dans le dossier test et executé la ligne ci-dessous pour effectuer la detection:
-'''!python yolov5/detect.py --weights yolov5/runs/train/exp3/weights/best.pt --source Donnees/test'''
+```!python yolov5/detect.py --weights yolov5/runs/train/exp3/weights/best.pt --source Donnees/test```
 
