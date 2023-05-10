@@ -1,0 +1,8 @@
+path: ../Donnees  # dataset root dir
+train: train/images  # train images (relative to 'path') 128 images
+val: valid/images
+test: test
+
+names:
+  0: feu
+  1: fumee
