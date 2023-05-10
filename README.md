@@ -10,3 +10,5 @@
 - Mettre un lien web vers une vidéo pour effectuer une détection
 - Capturer les images d'une webcam (pendant quelques secondes) 
 - Il est également possible d'acceder aux archives des images et vidéos 
+
+### PS: Il faut changer le codec de la ligne 203 dans le fichier detect.py de yolo pour que streamlit puisse lire les vidéos (*'mp4v' -> *'avc1')
