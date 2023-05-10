@@ -32,6 +32,7 @@ def get_db():
 detect = "C:/Users/utilisateur/workspace/yolo_feu/yolov5/detect.py"
 weight = "C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/train/exp3/weights/best.pt"
 dir_save_image = "C:/Users/utilisateur/workspace/BRIEF_DETECTION_INCENDIE/app/temp/"
+detect_yolo = 'C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/detect/'
 
 
 #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -65,6 +66,7 @@ def image():
     global detect
     global weight
     global dir_save_image
+    global detect_yolo
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
         # Sauvegarde de l'image dans un dossier :
@@ -81,10 +83,10 @@ def image():
         with col2:
             st.subheader('Avec detection')
             # Recherche de l'image crée avec la détection
-            path='C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/detect'
+            path = detect_yolo
             contents_exp = os.listdir(path)
             contents_exp = sorted(contents_exp, key=lambda x: os.path.getctime(os.path.join(path, x)), reverse=True)
-            path="C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/detect/" + contents_exp[0]
+            path= detect_yolo + contents_exp[0]
             contents_img = os.listdir(path)
             image2 = Image.open(path+"/"+contents_img[-1])
             #Affichage de l'image
@@ -110,6 +112,7 @@ def image():
         st.markdown("- Puis cliquer sur VISUALISER LA DETECTION")
 
 def videos():
+    global detect_yolo
     st.write("Voici la page video")
 
     # Vérifie si l'URL est valide
@@ -121,10 +124,10 @@ def videos():
         maintenant = datetime.datetime.now()
         date = maintenant.strftime("%d/%m/%Y %H:%M:%S")
         # Recherche de l'image crée avec la détection
-        path='C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/detect'
+        path=detect_yolo
         contents_exp = os.listdir(path)
         contents_exp = sorted(contents_exp, key=lambda x: os.path.getctime(os.path.join(path, x)), reverse=True)
-        path="C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/detect/" + contents_exp[0]
+        path=detect_yolo + contents_exp[0]
         liens_video = os.listdir(path)
         lien= path+"/"+liens_video[-1]
 
@@ -195,10 +198,10 @@ def webcam():
         maintenant = datetime.datetime.now()
         date = maintenant.strftime("%d/%m/%Y %H:%M:%S")
         # Recherche de l'image crée avec la détection
-        path='C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/detect'
+        path=detect_yolo
         contents_exp = os.listdir(path)
         contents_exp = sorted(contents_exp, key=lambda x: os.path.getctime(os.path.join(path, x)), reverse=True)
-        path="C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/detect/" + contents_exp[0]
+        path=detect_yolo + contents_exp[0]
         liens_video = os.listdir(path)
         lien= path+"/"+liens_video[-1]
 
@@ -216,6 +219,7 @@ def webcam():
     collection.insert_one({"date":date,"Original":"WEBCAM","AvecDetection":lien})
 
 def archives_images():
+    global detect_yolo
     db = get_db()
 
     collection = db["image"]
