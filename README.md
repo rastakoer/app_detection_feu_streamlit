@@ -1,4 +1,4 @@
-# app_detection_feu_streamlit
+# Mode d'emploi
 
 ## Pour faire fonctionner l'application streamlit il faut:
 - uploder yoloV5 sur son ordinateur
