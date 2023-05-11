@@ -16,17 +16,8 @@
 ---
 # Transfert learning:
 ## Pour entrainer YoloV5 à reconnaitre du feu et/ou de la fumée nous avons labélisé des images grâce makesens.ai nous avons ensuite stocké ces images dans un dossier Donnees comme ci-dessous
-YOLO_FEU  
-│  
-├───Donnees  
-│   ├───test  
-│   ├───train  
-│   │   ├───images  
-│   │   └───labels  
-│   └───valid  
-│       ├───images  
-│       └───labels  
-└───yolov5
+![image](https://github.com/rastakoer/app_detection_feu_streamlit/assets/65788781/b45e16f0-50e1-4e32-90a7-605f81bf48c9)
+
 
 ## Nous avons ensuite crée un fichier feu.yaml pour que yolo ait le chemin vers nos images et nos labels dans yoloV5>data
 
