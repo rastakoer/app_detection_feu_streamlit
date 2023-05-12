@@ -29,10 +29,10 @@ def get_db():
 #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 # CHEMIN POUR YOLO
 #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-detect = "C:/Users/utilisateur/workspace/yolo_feu/yolov5/detect.py"
-weight = "C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/train/exp3/weights/best.pt"
-dir_save_image = "C:/Users/utilisateur/workspace/BRIEF_DETECTION_INCENDIE/app/temp/"
-detect_yolo = 'C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/detect/'
+detect = "C:/Users/utilisateur/workspace/yolo_feu/yolov5/detect.py"     # chemin vers le fichier detect.py du dossier yolo que vous avez uploadé
+weight = "C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/train/exp3/weights/best.pt"   # chemin vers le fichier best.pt fourni dans ce repositorie
+dir_save_image = "C:/Users/utilisateur/workspace/BRIEF_DETECTION_INCENDIE/app/temp/"        # chemin vers le dossier temp de ce repositorie
+detect_yolo = 'C:/Users/utilisateur/workspace/yolo_feu/yolov5/runs/detect/'     # chemin vers le dossier detect du yolo que vous avez uploadé
 
 
 #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
