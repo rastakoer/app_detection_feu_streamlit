@@ -19,10 +19,11 @@
 ![image](https://github.com/rastakoer/app_detection_feu_streamlit/assets/65788781/b45e16f0-50e1-4e32-90a7-605f81bf48c9)
 
 
-## Nous avons ensuite crée un fichier feu.yaml pour que yolo ait le chemin vers nos images et nos labels dans yoloV5>data
+## Nous avons ensuite créé un fichier feu.yaml dans le dossier 'data' de Yolo pour lui donner le chemin vers nos images et nos labels.
 
-## Nous avons ensuite utilisé google colab pour entrainer notre modèle avec les commandes suivantes:
+## Nous avons ensuite utilisé google colab pour entrainer notre modèle avec les commandes suivantes, en précisant l'utilisation du feu.yaml dans la commande afin que Yolo aille bien chercher nos images d'entraînement:
 ```!python yolov5/train.py --data yolov5/data/feu.yaml --epochs 15 --batch-size 16```
 ## Et enfin nous avons réalisé un test en ajoutant des images dans le dossier test et executé la ligne ci-dessous pour effectuer la detection:
 ```!python yolov5/detect.py --weights yolov5/runs/train/exp3/weights/best.pt --source Donnees/test```
 
+Enfin, nous avons extrait le fichier 'best.pt' qui correspond au poids du modèle afin de l'utiliser dans la fonction de détection sur l'application streamlit, 'essai_app.py'. Nous avons également extrait le fichier 'feu.yaml' afin que vous en ayez un aperçu.
